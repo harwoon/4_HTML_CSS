@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS변수</title>
+    <style>
+        @font-face {
+            font-family: 'Escoredream';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-1Thin.woff') format('woff');
+            font-weight: 100;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Escoredream';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff') format('woff');
+            font-weight: 200;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Escoredream';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Escoredream';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
+            font-weight: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Escoredream';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Escoredream';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Escoredream';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-7ExtraBold.woff') format('woff');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Escoredream';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff') format('woff');
+            font-weight: 800;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Escoredream';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+            font-weight: 900;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'RoughlyWrittenJunwoo';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-4@1.1/RFjunwooo.woff2') format('woff2');
+            font-weight: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'OngleipParkDahyeon';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2411-3@1.0/Ownglyph_ParkDaHyun.woff2') format('woff2');
+            font-weight: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --main-color: #3498db;
+            --sub-color: #2ecc71;
+            --base-padding: 20px;
+            --title-size: 24px;
+        }
+
+        body {
+            font-family: 'Escoredream';
+            margin: 40px;
+        }
+
+        .box{
+            border: 2px solid var(--main-color);
+            padding: var(--base-padding);
+            margin-bottom: 20px;
+        }
+
+        h1{
+            font-size: var(--title-size);
+            color: var(--main-color);
+        }
+
+        p{
+            color: var(--sub-color);
+        }
+
+    </style>
+</head>
+
+<body>
+    <!--
+        변수
+        자주 사용하는 스타일 값을 이름으로 정의해 두고 필요할 때마다 재사용할 수 있게 해주는 기능으로,
+        --변수이름 형태로 선언하고 var() 함수로 불러옴
+
+        보통 전역변수로 사용함
+        전역으로 설정하고 있음
+        :root {
+            --main-color: #3498db;
+            --font-size-base: 15px;
+            --spacing: 20px;
+        }
+
+        body{
+            background-color: var(--main-color);
+            font-size: var(--font-size-base);
+        }
+
+        * css 변수에 기본값 지정
+        color: var(--subcolor, black) subcolor 없으면 black
+
+        * 범위별 변수
+        .card{
+            --casrd-padding: 12px;
+            padding: var(--card-padding);
+        }
+
+    -->
+
+    <div class="box">
+        <h1>CSS 변수 예제</h1>
+        <p>
+            이 예제는 CSS 변수를 사용해 색상과 여백을 관리합니다.
+        </p>
+    </div>
+
+
+</body>
+
+</html>

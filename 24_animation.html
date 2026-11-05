@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        @font-face {
+            font-family: 'Escoredream';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-1Thin.woff') format('woff');
+            font-weight: 100;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Escoredream';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff') format('woff');
+            font-weight: 200;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Escoredream';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Escoredream';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
+            font-weight: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Escoredream';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Escoredream';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Escoredream';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-7ExtraBold.woff') format('woff');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Escoredream';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff') format('woff');
+            font-weight: 800;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Escoredream';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+            font-weight: 900;
+            font-display: swap;
+        }
+
+        body {
+            font-family: 'Escoredream';
+        }
+
+        @keyframes toastIn {
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .toast {
+            width: 360px;
+            border: 2px solid #000;
+            padding: 16px;
+            margin-bottom: 30px;
+
+            animation: toastIn;
+            animation-duration: 0.6s;
+            animation-timing-function: ease-out;
+            animation-delay: 0.2s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .spinner {
+            width: 46px;
+            height: 46px;
+            border: 6px solid #000;
+            border-top-color: transparent;
+            /*윗변의 색이 부모를 따라가 투명함*/
+
+            border-radius: 50%;
+            margin-bottom: 30px;
+            animation: spin 1s linear 0s infinite normal none;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+        }
+
+        .badge{
+            display: inline-block; /*블록태그가 인라인태그 특징 가질 수 있게됨. 인라인태그도 블록태그 특징 가질 수 있게 됨.*/
+            border: 2px solid #000;
+            padding: 8px 12px;
+            margin-bottom: 30px;
+
+            animation: pulse 0.7s ease-in-out 0s infinite alternate none;
+        }
+
+        .pause-hint{
+            margin-top: 10px;
+            font-size: 14px;
+            
+        }
+
+        .badge:hover{
+            animation-play-state: paused;
+        }
+
+        h2{
+            margin: 20px 0 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- 
+        animation
+        @keyframes 이용해 여러 단계의 스타일 변화를 정의하고 이를 자동으로 재생하는 기능으로, 사용자 상호작용이 없어도 시간의 흐름에 따라 요소가 움직이거나 변형되도록 만들 수 있음.
+
+        tansition보다는 자유도가 높다
+
+        @keyframes 애니메이션이름{
+            단계{
+                스타일;
+            }
+        }
+
+        예)
+        @keyframes fade{
+            from { opacity: 0;}
+            to { opacity: 1; }
+        }
+
+        @keyframes bounce {
+            0% {transform: translateY(0);}
+            25% {transform: translateY(-50);}
+            50% {transform: translateY(-10);}
+            75% {transform: translateY(20);}
+            100% {transform: translateY(0);}
+        }
+
+        animation-name
+        animation-name: fade
+        적용할 @keyframes 이름을 지정
+
+        animation-duration: 2s;
+        애니메이션 한 번 실행되는 시간
+
+        animation-timing-function
+        animation-timing-function: ease-in-out 느렸다 빨랐다 느림
+        애니메이션 속도 변화 방식
+
+        animation-delay
+        animation-delay: 1s
+        애니메이션 시작 전 대기 시간
+
+        animation-iteration-count
+        animation-iteration-count: infinite; 혹은 숫자 적음
+        반복 횟수 지정. 숫자 또는 infinite(무제한)
+
+        animation-direction
+        animation-direction: alternate;
+        재생 방향. forward(앞으로 순방향), alternate(앞으로 뒤로)
+
+        animation-fill-mode
+        animation-fill-mode: forwards; 기본값 애니메이션이 끝나는 위치에 멈춰있음
+        시작/종료 후 스타일 유지 여부
+
+        animation-play-state
+        animation-play-state: paused;
+        애니메이션 재생/정지. play(진행), paused(멈춤)
+
+        animation: name duration timing-function delay iteration-couunt direction fill-mode;
+
+    -->
+
+    <h2>토스트(알림) 등장</h2>
+    <div class="toast">
+        저장되었습니다! (0.2초 후 부드럽게 등장)
+    </div>
+
+
+    <h2>로딩 스피너</h2>
+    <div class="spinner"></div>
+
+    <h3>강조 배지(펄스)</h3>
+    <div class="badge">HOT</div>
+    <div class="pause-hint">배지에 마우스를 올리면 애니메이션이 멈춥니다.</div>
+</body>
+
+</html>

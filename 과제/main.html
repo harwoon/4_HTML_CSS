@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맛집 소개</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .web {
+            border: 2px solid #000;
+            border-collapse: collapse;
+            margin: 10px;
+            padding: 20px;
+
+            display: grid;
+
+            grid-template-rows: 1fr 6fr 1fr;
+            grid-template-columns: 2fr 8fr;
+            grid-template-areas:
+                "header header"
+                "nav main"
+                "footer footer";
+
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        .header {
+            grid-area: header;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 3px;
+        }
+
+        .nav {
+            grid-area: nav;
+        }
+
+        .main {
+            grid-area: main;
+        }
+
+        .sec1 {
+            height: 200px;
+        }
+
+        .sec2 {
+            height: 200px;
+        }
+
+        .footer {
+            grid-area: footer;
+        }
+
+        .header,
+        .nav,
+        .sec1,
+        .sec2,
+        .footer {
+            border: 2px solid #000;
+            margin: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="web">
+        <header class="header">
+            <h2>헤딩2</h2>
+        </header>
+
+        <nav class="nav">사이드 바</nav>
+        <main class="main">
+            <section class="sec1">섹션1</section>
+            <section class="sec2">섹션2</section>
+        </main>
+
+        <footer class="footer">푸터</footer>
+    </div>
+
+</body>
+
+</html>
